@@ -27,3 +27,5 @@ def merge_sort(arr):
     right = merge_sort(right)
 
     return merge_list(left, right)   
+
+'''Функция соответствует заданным критериям, поскольку её максимальной сложностью является O(n log(n)'''
