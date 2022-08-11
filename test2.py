@@ -1,29 +1,27 @@
+from collections import deque
+
 class Fifo1:
 
     def __init__(self):
-        self.a = list([1, 2, 3])
+        self.a = deque()
 
     def add(self, val):
-        self.a += [val]
+        self.a.append(val)
     
     def delete(self):
-        val = self.a[0]
-        self.a = self.a[1:]
-        return val
-
-    def read(self): 
-        return self.a
+        return self.a.popleft()
     
 class Fifo2():
 
-	def __init__(self, data):
-		self.fifo = data
+	def __init__(self):
+		self.fifo = list()
 
-	def add(self, value):
-		self.fifo.append(value)
-
-	def read(self):
-		return self.fifo[0]
+	def add(self, val):
+		self.fifo.append(val)
 
 	def delete(self):
 		return self.fifo.pop(0)
+
+'''В первой реализации используется класс deque, который  реализует двухконечную очередь,
+которая поддерживает добавление и удаление элементов с обоих концов в течение О(1) времени.
+Во второй реализации используется стандартный список'''
