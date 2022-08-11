@@ -1,4 +1,3 @@
-
 class Fifo1:
 
     def __init__(self):
@@ -14,16 +13,17 @@ class Fifo1:
 
     def read(self): 
         return self.a
+    
+class Fifo2():
 
+	def __init__(self, data):
+		self.fifo = data
 
-test = Fifo1()
+	def add(self, value):
+		self.fifo.append(value)
 
-test.add(10)
-print(test.read())
-print(test.delete())
-print(test.read())
+	def read(self):
+		return self.fifo[0]
 
-test2 = Fifo1()
-
-test2.add(11)
-print(test2.read())
+	def delete(self):
+		return self.fifo.pop(0)
